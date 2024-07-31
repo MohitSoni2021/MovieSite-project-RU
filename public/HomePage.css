@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.ubuntu-bold {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+body {
+    background-color: #1f1f1f;
+    scrollbar-width: none;
+}
+
+nav {
+    padding: 10px;
+    background-color: #1c1c1c;
+    color: white;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: red;
+    font-weight: bolder;
+    font-size: 2.6rem;
+    box-shadow: 3px 0 4px 4px black;
+}
+
+nav > button {
+    font-size: large;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+nav > button > a {
+    border-radius: 5px;
+    background-color: rgb(59, 59, 59);
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
+
+main {
+    margin-top: 2rem;
+    scrollbar-width: none;
+}
+
+.movieCardOuter{
+    padding: 15px;
+    color: white;
+}
+
+.carousalContainer{
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    position: relative;
+    padding: 0 25px;
+    overflow: hidden;
+}
+
+.movieCard {
+    height: 250px;
+    border-radius: 10px;
+    aspect-ratio: 1/1.6;
+    background-color: rgb(0, 255, 225);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    position: relative;
+    cursor: pointer;
+}
+
+.movieCard:hover .hoverDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.movieCard:hover .hoverDetails a {
+    font-size: 16px;
+    color: rgb(145, 145, 255);
+    margin-top: 15px;
+}
+
+.arrowIcons{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 0%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.arrowIcons:first-child{
+    left: 0;
+}
+
+.arrowIcons:last-child{
+    right: 0;
+}
+
+.movieCardContainer{
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.movieCardContainer {
+    scroll-snap-type: x mandatory;	
+	display: flex;
+	-webkit-overflow-scrolling: touch;
+	overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.bookImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.hoverDetails{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1cb9;
+    display: none;
+    font-size: 1.3rem;
+}
+
+
+
+#loaderContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#MovieCategory{
+    display: none;
+}
+
+.loader {
+    border: 7px solid #1f1f1f; /* Light grey */
+    border-top: 7px solid #ff1f1f; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .HighligterMovieCrausel{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .HighligterMovieCrausel:first-child{
+    font-size: 4rem;
+    color: white;
+  }
+  
+  .HighlightedMoviePoster {
+    width: 100%;
+    aspect-ratio: 20/9;
+    background-color: #7b7b7b;
+    max-width: 1240px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    color: white;
+    display: flex;
+    scroll-behavior: smooth;
+    justify-content: space-around;
+    scroll-snap-type: x mandatory;
+  }
+
+  .HighlightedMoviePosterImage{
+    height: 100%;
+    aspect-ratio: 20/9;
+  }
+
+  .fullScreen{
+    height: 100%;
+    width: 100%;
+  }
+
+  .HighlightMoviePosterCover{
+    scroll-snap-align: start;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .HighlightMoviePosterCover:hover .NameCover{
+    display: flex;
+  }
+
+  .NameCover{
+    font-size: 3rem;
+    background-color: #1c1c1c69;
+    backdrop-filter: blur(4px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+
+  #displayBoard{
+    scrollbar-width: none;
+  }
+
+
+
+@media only screen and (max-width: 950px) {
+    .movieCard{
+        height: 150px;
+    }
+    .arrowIcons{
+        display: none;
+    }
+    .carousalContainer {
+        padding: 0 10px;
+    }
+    .carousalContainer{
+        padding: 10px 0;
+    }
+    .movieCardOuter{
+        padding: 5px 5px;
+        font-size: 0.8rem;
+    }
+    .carousalContainer{
+        padding-top:0;
+    }
+    nav {
+        font-size: 1.9rem;
+    }
+    .HighligterMovieCrausel{
+        padding: 0 5%;
+    }
+    .HighlightedMoviePoster{
+        aspect-ratio: 16/9;
+    }
+    .HighlightedMoviePosterImage{
+        aspect-ratio: 16/9;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .HighligterMovieCrausel{
+        padding: 0 1%;
+    }
+    .NameCover{
+        font-size: 1.5rem;
+    }
+    
+}

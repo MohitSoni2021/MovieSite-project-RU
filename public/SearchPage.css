@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1c1c1c;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center{
+    align-items: center
+}
+
+.justify-center{
+    justify-content: center
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.SearchBar{
+    padding: 5px 0;
+    gap: 10px;
+}
+
+.SearchBar > input {
+    padding: 10px;
+    font-size: large;
+    border: none;
+    background: #2e2e2e;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.SearchBar > button {
+    padding: 10px 25px;
+    border-radius: 5px;
+    background-color: rgb(0, 255, 170);
+    font-size: large;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.SearchBar > button:hover {
+    background-color: rgb(0, 255, 115);
+    transition: all 0.2s ease;
+}
+
+.movieCardContainer{
+    padding: 25px 0;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.MovieCardOuterShell{
+    width: 150px;
+    min-width: 150px;
+    aspect-ratio: 1/1.3;
+    background-color: rgb(57, 57, 57);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.MovieCardOuterShell:hover .infoContainer { 
+    display: flex;
+    opacity: 100%;
+    transition: all 0.5s ease;
+}
+
+.infoContainer{
+    background-color: rgba(0, 0, 0, 0.31);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 4px;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(7px);
+    color: white;
+    flex-direction: column;
+}
+
+.infoContainer > a {
+    color: rgb(79, 79, 255);
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.479);
+    padding: 3px 7px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 90%;
+    text-align: center;
+}
+
+.ImageFull {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* loader css */
+.loader {
+    border: 7px solid #1f1f1f; /* Light grey */
+    border-top: 7px solid #ff1f1f; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #loaderContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.EmptyDisplayMessage{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: white;
+}
